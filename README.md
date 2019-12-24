@@ -5,7 +5,9 @@ A simple clothing supplemented with a frame of intelligent control LED tapes(WS2
 
 ## How it works:
 ### Getting data to process
-*not implemented yet*
+
+Сurrently we are using the rangefinder as one of the sensors that produces the information. However, in the nearest future we are planning to use other sensors that will give more accurate information about factors closer to human`s ordinary life.
+
 ### Displaying patterns
 Depending on data we get our interactive clothing displays different patterns with different combinations of colours.
 *not implemented yet*
