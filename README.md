@@ -35,7 +35,9 @@ Depending on data we get our interactive clothing displays different patterns wi
 - We are trying to change LED tape lighting colour depending on distance
 
 ### Should be done:
-*not implemented yet*
+- change the sensor we use to get data ( to make a wider and more convenient range of data we can get)
+- in accordance with the results of done work develop the mechanism of operation of the LED strip
+- make all components of our project "smaller size", to make usage of IC easier and more comfortable
 
 
 ## Documentation
