@@ -42,5 +42,5 @@ Depending on data we get our interactive clothing displays different patterns wi
 
 ## Documentation
 
-## Developers
+## Team
 Sophia Kravchuk, Julia Pochynok, Sophia Haletska, Anastasia Liatska
