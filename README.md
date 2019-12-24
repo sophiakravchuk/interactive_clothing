@@ -23,10 +23,17 @@ Depending on data we get our interactive clothing displays different patterns wi
 
 ## Our progress
 ### Done:
+- got acquainted with the principles of diodes operation
+- used Motion Detector to illuminate the diode depending on the presence of motion
+- worked with one Intelligent control LED (WS2812B)
+- got acquainted with the features of the color transfer of the diode
+- we work with a rangefinder to illuminate the diode(not WS2812B) depending on the distance at which the object is located.
+- we learn how to light up a certain number of LED on the tape 
 
-*not implemented yet*
 ### Working with:
-*not implemented yet*
+- We are trying to set a specific color to the Intelligent control LED tape
+- We are trying to change LED tape lighting colour depending on distance
+
 ### Should be done:
 *not implemented yet*
 
