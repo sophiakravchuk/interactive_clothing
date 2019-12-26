@@ -9,8 +9,7 @@ A simple clothing supplemented with a frame of intelligent control LED tapes(WS2
 Сurrently we are using the rangefinder as one of the sensors that produces the information. However, in the nearest future we are planning to use other sensors that will give more accurate information about factors closer to human`s ordinary life.
 
 ### Displaying patterns
-Depending on data we get our interactive clothing displays different patterns with different combinations of colours.
-*not implemented yet*
+Depending on data we get our interactive clothing displays different patterns with different combinations of colours. Now it is 1 LED per 1 cm.
 
 ## Materials that we use
 
