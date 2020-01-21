@@ -9,7 +9,7 @@ LED tape lights in different colours depending on distance of closest item.
 If some item is closer than 20 cm to person - tape has red light, 20 - 50 cm: orange, 50 - 100 cm: yellow, and more: green.
 
 #### Example:
-![mode 1](https://drive.google.com/uc?export=view&id=1AEwmK_NFDQ_S34hLclMP7Uz-a3Hduuyx)
+![mode 1](https://github.com/juliapochynok/interactive_clothing/blob/master/ezgif.com-gif-maker%20(1).gif?raw=true)
 
 
 link - https://drive.google.com/open?id=1AEwmK_NFDQ_S34hLclMP7Uz-a3Hduuyx
