@@ -11,6 +11,9 @@ If some item is closer than 20 cm to person - tape has red light, 20 - 50 cm: or
 #### Example:
 ![mode 1](https://drive.google.com/uc?export=view&id=1AEwmK_NFDQ_S34hLclMP7Uz-a3Hduuyx)
 
+
+link - https://drive.google.com/open?id=1AEwmK_NFDQ_S34hLclMP7Uz-a3Hduuyx
+
 ### Mode 2.
 LED tape lights certain amount of LEDs depending on distance of closest item.
 If closest item is 5 cm away from person's feet - 5 LEDs does NOT glow, 10 cm: 10 LEDs does not glow.
@@ -18,6 +21,8 @@ If closest item is 5 cm away from person's feet - 5 LEDs does NOT glow, 10 cm: 1
 #### Example:
 ![mode 2](https://drive.google.com/uc?export=view&id=10hJ_Z9r3TM70eM-V-LqvQk6w90dFBRcD)
 
+
+link - https://drive.google.com/open?id=1o1Cnzm2foz8ZPk9AcE9jDxdfRMFJAjPs
 ## How it works:
 ### Getting data to process
 
