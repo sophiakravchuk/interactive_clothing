@@ -1,0 +1,18 @@
+#include <stdlib.h>
+#include <stdint.h>
+//--------------------------------------------------
+
+#define GREEN 100
+#define YELLOW 50
+#define ORANGE 20
+#define RED 0
+#define STATE_STEP 61
+
+//--------------------------------------------------
+void delay_L(void);
+void delay_H(void);
+void send_byte(int a);
+int distance_to_state(int distance);
+void light_grad(int dist);
+void light(float distance);
+

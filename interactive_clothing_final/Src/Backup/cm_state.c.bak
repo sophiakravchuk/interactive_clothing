@@ -1,0 +1,82 @@
+#include "main.h"
+#include "gpio.h"
+#include "led_tape.h"
+#include "dalekomir.h"
+
+void cm_state(){
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+	  int distance_cm;
+	    HAL_Delay(100);
+	    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
+	        while (1)
+	        {
+	            while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8) == GPIO_PIN_SET )
+	            {
+	                HAL_Delay(100);
+	            }
+	            HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_SET);
+	            if ( HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8) != GPIO_PIN_SET )
+	            {
+	                HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
+	                HAL_Delay(100);
+	                continue;
+	            }
+	            udelay(16);
+	            HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
+	            if ( HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8) != GPIO_PIN_RESET )
+	            {
+	                HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
+	                HAL_Delay(100);
+	                continue;
+	            }
+	            if ( HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_9) == GPIO_PIN_SET )
+	            {
+	                HAL_Delay(100);
+	                continue;
+	            }
+
+	            uint32_t watchdog_begin = get_us();
+	            int didnt_had_1_at_echo = 0;
+	            while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_9) == GPIO_PIN_RESET )
+	            {
+	                if( get_us() - watchdog_begin > 5000 )
+	                {
+	                    didnt_had_1_at_echo = 1;
+	                    break;
+	                }
+	            }
+	            if(didnt_had_1_at_echo)
+	            {
+	                HAL_Delay(100);
+	                continue;
+	            }
+
+	            uint32_t before = get_us();
+	            int didnt_had_0_at_echo = 0;
+	            while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_9) == GPIO_PIN_SET )
+	            {
+	                if( get_us() - watchdog_begin > 5000 )
+	                {
+	                    didnt_had_0_at_echo = 1;
+	                    break;
+	                }
+	            }
+	            if(didnt_had_0_at_echo)
+	            {
+	                HAL_Delay(100);
+	                continue;
+	            }
+
+	            uint32_t pulse_time = get_us()-before;
+	            uint32_t distance_mm = (int)((float)pulse_time/5.8);
+	            if(distance_mm > 30 && distance_mm < 5000) {
+	                if (distance_cm != distance_mm) {
+
+	                    light((float)distance_mm / 10.0);
+	                    distance_cm = distance_mm;
+	                }
+	                udelay(1000);
+	            }
+
+	        }
+}
