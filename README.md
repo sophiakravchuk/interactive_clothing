@@ -19,7 +19,7 @@ LED tape lights certain amount of LEDs depending on distance of closest item.
 If closest item is 5 cm away from person's feet - 5 LEDs does NOT glow, 10 cm: 10 LEDs does not glow.
 
 #### Example:
-![mode 2](https://drive.google.com/uc?export=view&id=10hJ_Z9r3TM70eM-V-LqvQk6w90dFBRcD)
+![mode 2](https://github.com/juliapochynok/interactive_clothing/blob/master/cm_state.gif?raw=true)
 
 
 link - https://drive.google.com/open?id=1o1Cnzm2foz8ZPk9AcE9jDxdfRMFJAjPs
