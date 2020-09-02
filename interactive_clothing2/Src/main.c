@@ -120,6 +120,11 @@ void light(float distance) {
             send_byte(0xE2);
         }
     }
+    for (int i = distance; i < 61; i++) {
+        send_byte(0x00);
+        send_byte(0x00);
+        send_byte(0x00);
+    }
 }
 
 int DWT_Init(void) {
@@ -198,19 +203,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
   int distance_cm;
-    HAL_Delay(1);
+    HAL_Delay(100);
     HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
         while (1)
         {
             while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8) == GPIO_PIN_SET )
             {
-                HAL_Delay(300);
+                HAL_Delay(100);
             }
             HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_SET);
             if ( HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8) != GPIO_PIN_SET )
             {
                 HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
-                HAL_Delay(300);
+                HAL_Delay(100);
                 continue;
             }
             udelay(16);
@@ -218,12 +223,12 @@ int main(void)
             if ( HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8) != GPIO_PIN_RESET )
             {
                 HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_RESET);
-                HAL_Delay(300);
+                HAL_Delay(100);
                 continue;
             }
             if ( HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_9) == GPIO_PIN_SET )
             {
-                HAL_Delay(300);
+                HAL_Delay(100);
                 continue;
             }
 
@@ -231,7 +236,7 @@ int main(void)
             int didnt_had_1_at_echo = 0;
             while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_9) == GPIO_PIN_RESET )
             {
-                if( get_us() - watchdog_begin > 500000 )
+                if( get_us() - watchdog_begin > 5000 )
                 {
                     didnt_had_1_at_echo = 1;
                     break;
@@ -239,7 +244,7 @@ int main(void)
             }
             if(didnt_had_1_at_echo)
             {
-                HAL_Delay(300);
+                HAL_Delay(100);
                 continue;
             }
 
@@ -247,7 +252,7 @@ int main(void)
             int didnt_had_0_at_echo = 0;
             while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_9) == GPIO_PIN_SET )
             {
-                if( get_us() - watchdog_begin > 500000 )
+                if( get_us() - watchdog_begin > 5000 )
                 {
                     didnt_had_0_at_echo = 1;
                     break;
@@ -255,7 +260,7 @@ int main(void)
             }
             if(didnt_had_0_at_echo)
             {
-                HAL_Delay(300);
+                HAL_Delay(100);
                 continue;
             }
 
@@ -267,7 +272,7 @@ int main(void)
                     light((float)distance_mm / 10.0);
                     distance_cm = distance_mm;
                 }
-                udelay(10000);
+                udelay(1000);
             }
     /* USER CODE END WHILE */
 
